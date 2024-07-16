@@ -1,0 +1,30 @@
+---
+# Jekyll Frontmatter
+---
+
+@import "typography";
+
+body {
+    margin: 0;
+    background-color:#163944;
+}
+header {
+    text-align: center;
+    background-color: white;
+    margin: 25px 0;
+    padding: 25px 0;
+    width: 100%;
+}
+
+h2 {
+    font-size: xxx-large;
+}
+
+
+.container {
+    text-align: center;
+}
+
+.container a {
+    font-size: x-large;
+}
