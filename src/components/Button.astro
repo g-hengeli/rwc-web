@@ -1,19 +1,43 @@
 ---
-// Click button, get confetti!
-// Styled by Tailwind :)
+export interface Props {
+	variant?: 'primary' | 'secondary' | 'outline';
+	size?: 'sm' | 'md' | 'lg';
+	id?: string;
+	class?: string;
+}
+
+const { 
+	variant = 'primary', 
+	size = 'md', 
+	id,
+	class: className = ''
+} = Astro.props;
+
+const variants = {
+	primary: 'bg-brand-blue text-white hover:bg-opacity-90',
+	secondary: 'bg-brand-gray-medium text-white hover:bg-brand-gray-dark',
+	outline: 'border-2 border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white'
+};
+
+const sizes = {
+	sm: 'px-4 py-2 text-sm',
+	md: 'px-6 py-3 text-base',
+	lg: 'px-8 py-4 text-lg'
+};
+
+const classes = `
+	appearance-none font-semibold rounded-lg shadow-md 
+	focus:outline-none focus:ring-2 focus:ring-brand-blue focus:ring-opacity-75
+	transition-all duration-300 transform hover:scale-105
+	${variants[variant]}
+	${sizes[size]}
+	${className}
+`.trim().replace(/\s+/g, ' ');
 ---
 
 <button
-	class="appearance-none py-2 px-4 bg-purple-500 text-white font-semibold rounded-lg shadow-md hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-opacity-75"
+	class={classes}
+	id={id}
 >
 	<slot />
 </button>
-
-<script>
-	import confetti from 'canvas-confetti';
-	const button = document.body.querySelector('button');
-
-	if (button) {
-		button.addEventListener('click', () => confetti());
-	}
-</script>
