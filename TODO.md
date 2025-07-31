@@ -30,6 +30,7 @@ Based on RWC-PRD.md requirements. Tasks organized by priority.
 - **Location:** Flintrock Falls
 - **Logo:** rwc-logo_transparent.svg
 - **Tagline:** "Rough Water Cup V"
+- **TtileSponsors:** "JP Morgan Asset Management", "Rembrand Financial Group, LLC"
 
 ## Navigation Structure
 
