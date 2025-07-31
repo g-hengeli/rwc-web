@@ -1,23 +1,20 @@
 ---
 // Hero section component for the Rough Water Cup landing page
 import Button from './Button.astro';
-const rwcLogo = '/src/assets/rwc-logo_trans.svg'; 
+
 ---
 
 <!-- Hero Section -->
-<main id="home" class="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-green-100 via-emerald-50 to-blue-50">
-	<div class="absolute inset-0 bg-gradient-to-r from-green-200/30 via-emerald-100/20 to-blue-100/30"></div>
+<main id="home" class="relative min-h-screen flex items-center justify-center bg-cover bg-center bg-no-repeat" style="background-image: url('/hero-golf-course.jpg');">
+	<div class="absolute inset-0 bg-black/40"></div>
 	<div class="relative z-10 text-center max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-		<div class="mb-8 animate-fade-in">
-			<img src={rwcLogo} alt="Rough Water Cup Logo" class="h-24 w-24 mx-auto mb-6" />
-		</div>
-		<h1 class="text-5xl md:text-7xl font-bold text-brand-blue mb-4 animate-slide-up">
+		<h1 class="text-5xl md:text-7xl font-bold text-white mb-4 animate-slide-up drop-shadow-lg">
 			Rough Water Cup V
 		</h1>
-		<p class="text-xl md:text-2xl text-brand-gray-medium mb-2 animate-slide-up" style="animation-delay: 0.2s">
+		<p class="text-xl md:text-2xl text-white mb-2 animate-slide-up drop-shadow-lg" style="animation-delay: 0.2s">
 			November 17, 2025
 		</p>
-		<p class="text-lg md:text-xl text-brand-gray-medium mb-8 animate-slide-up" style="animation-delay: 0.4s">
+		<p class="text-lg md:text-xl text-white mb-8 animate-slide-up drop-shadow-lg" style="animation-delay: 0.4s">
 			Flintrock Falls Golf Course
 		</p>
 		<div class="animate-slide-up" style="animation-delay: 0.6s">

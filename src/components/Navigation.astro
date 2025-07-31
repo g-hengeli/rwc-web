@@ -1,14 +1,15 @@
 ---
 // Navigation component for the Rough Water Cup website
+const rwcLogo = '/src/assets/rwc-logo_trans.svg'; 
 ---
 
 <!-- Navigation -->
 <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-md z-50 border-b border-gray-200">
 	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 		<div class="flex justify-between items-center h-16">
-			<div class="flex items-center space-x-2">
-				<img src="/rwc-logo_transparent.svg" alt="RWC Logo" class="h-8 w-8" />
-				<span class="text-xl font-bold text-brand-blue">RWC V</span>
+			<div class="flex items-center space-x-3">
+				<img src={rwcLogo} alt="RWC Logo" class="h-12 w-12" />
+				<span class="text-xl font-bold text-brand-blue">Rough Water Cup</span>
 			</div>
 			<div class="hidden md:flex space-x-8">
 				<a href="#home" class="text-brand-gray-dark hover:text-brand-blue transition-colors">Home</a>
@@ -74,9 +75,10 @@
 
 	// Smooth scrolling for navigation links
 	document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-		anchor.addEventListener('click', function (e) {
+		anchor.addEventListener('click', (e: Event) => {
 			e.preventDefault();
-			const target = document.querySelector(this.getAttribute('href'));
+			const href = (e.target as HTMLAnchorElement).getAttribute('href');
+			const target = document.querySelector(href || '');
 			if (target) {
 				target.scrollIntoView({
 					behavior: 'smooth',
